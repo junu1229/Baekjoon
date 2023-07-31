@@ -1,6 +1,3 @@
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 class Solution {
     public int solution(int n) {
         int answer = 0;
