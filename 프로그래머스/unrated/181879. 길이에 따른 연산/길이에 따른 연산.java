@@ -1,10 +1,8 @@
 import java.util.Arrays;
+import java.util.stream.IntStream;
 class Solution {
     public int solution(int[] num_list) {
-        int answer = 1;
-        for(int num: num_list) {
-            answer *=num;
-        }
-        return num_list.length>10 ? Arrays.stream(num_list).sum() : answer;
+        IntStream stream = Arrays.stream(num_list);
+        return num_list.length>10 ? stream.sum() : stream.reduce(1, (acc, i) -> acc * i);
     }
 }
