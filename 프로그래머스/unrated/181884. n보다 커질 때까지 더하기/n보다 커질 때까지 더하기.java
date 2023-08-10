@@ -1,12 +1,6 @@
+import java.util.Arrays;
 class Solution {
     public int solution(int[] numbers, int n) {
-        int answer = 0;
-		for(int num:numbers) {
-			if (answer<=n) {
-				answer+=num;
-                
-			}
-		}
-        return answer;
+        return Arrays.stream(numbers).reduce(0, (acc, i) -> acc<=n ? acc+i : acc);
     }
 }
